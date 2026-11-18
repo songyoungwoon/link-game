@@ -1,0 +1,111 @@
+{
+  "provider": "Poly Haven",
+  "license": "CC0-1.0",
+  "license_url": "https://polyhaven.com/license",
+  "retrieved": "2026-11-07",
+  "note": "Photo-based PBR material maps, downloaded from the official public API. Raw files are kept for offline deterministic generation.",
+  "assets": [
+    {
+      "id": "sandstone_blocks_04",
+      "url": "https://polyhaven.com/a/sandstone_blocks_04",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "map": "Diffuse",
+          "path": "sandstone_blocks_04_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sandstone_blocks_04/sandstone_blocks_04_diff_1k.jpg",
+          "bytes": 499843,
+          "md5": "77d432c47fa77c827fb06a2f6986d054",
+          "sha256": "a1399a26a60b5024a832c8dd0f1a27bc7ad6c4d06fd60143d803ff6d93b778ed"
+        },
+        {
+          "map": "nor_gl",
+          "path": "sandstone_blocks_04_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/sandstone_blocks_04/sandstone_blocks_04_nor_gl_1k.png",
+          "bytes": 1619120,
+          "md5": "03b67cdc9e583049b289032b5db560b7",
+          "sha256": "89c0e63c39c22e0e72ec9bd2c508216599cdd6c3b9087ab9854c0c16e713f987"
+        },
+        {
+          "map": "arm",
+          "path": "sandstone_blocks_04_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sandstone_blocks_04/sandstone_blocks_04_arm_1k.jpg",
+          "bytes": 198382,
+          "md5": "55c5cbdf0273060b7758c187744dfc1f",
+          "sha256": "d72349e233c868b321c76aa8375f6c614088a7350d6fcb6e7e745954dfdada5b"
+        }
+      ]
+    },
+    {
+      "id": "sandstone_cracks",
+      "url": "https://polyhaven.com/a/sandstone_cracks",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "map": "Diffuse",
+          "path": "sandstone_cracks_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sandstone_cracks/sandstone_cracks_diff_1k.jpg",
+          "bytes": 696657,
+          "md5": "94619de4f4d33ad9fe6711d3ad88ec4a",
+          "sha256": "cf381bbcf60aac570ce895719025a2b7adae7c03369b3d545b4f52f94e57e0e9"
+        },
+        {
+          "map": "nor_gl",
+          "path": "sandstone_cracks_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/sandstone_cracks/sandstone_cracks_nor_gl_1k.png",
+          "bytes": 2336597,
+          "md5": "929cfb9b35f8edffd391998a0d31752c",
+          "sha256": "fff4b00ade517fa543ff86cb1d688cf2536578fc6fecf36d9b42ef37bfba8a64"
+        },
+        {
+          "map": "arm",
+          "path": "sandstone_cracks_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/sandstone_cracks/sandstone_cracks_arm_1k.jpg",
+          "bytes": 222344,
+          "md5": "cd57519bfada416f66bb450ced316012",
+          "sha256": "94697b622aeb94acb38b474c96dce2e548a1b4c706f84a340764142e17a0e697"
+        }
+      ]
+    },
+    {
+      "id": "stone_floor",
+      "url": "https://polyhaven.com/a/stone_floor",
+      "authors": {
+        "Dimitrios Savva": "All"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        {
+          "map": "Diffuse",
+          "path": "stone_floor_diff_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_floor/stone_floor_diff_1k.jpg",
+          "bytes": 911345,
+          "md5": "6dff94d7c1da0fd034ba714c249ec72f",
+          "sha256": "e97eb20c1b7379a0326074991bdd3cb6a15a0af399bb6798a7f814051e0937e7"
+        },
+        {
+          "map": "nor_gl",
+          "path": "stone_floor_nor_gl_1k.png",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/stone_floor/stone_floor_nor_gl_1k.png",
+          "bytes": 5696130,
+          "md5": "30f3a186998bee5e2150d7659f81fd1b",
+          "sha256": "dd6c201d27525af6dc78f028b985adea946655ba9b96b8291086949c586b19ac"
+        },
+        {
+          "map": "arm",
+          "path": "stone_floor_arm_1k.jpg",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/stone_floor/stone_floor_arm_1k.jpg",
+          "bytes": 600846,
+          "md5": "ab242935d5675669dc57f8ae9b60df81",
+          "sha256": "3c7be79ede269c85e5eb6d5572ee505eb75a87eca24160fca9c691da0e5f4b2d"
+        }
+      ]
+    }
+  ]
+}

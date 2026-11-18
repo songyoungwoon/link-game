@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "authority": "link://127.0.0.1:8010/traveler-a",
+  "peers": [
+    "link://127.0.0.1:8011/traveler-b"
+  ],
+  "bounds": {
+    "min": [
+      -8,
+      0,
+      -8
+    ],
+    "max": [
+      8,
+      4,
+      8
+    ]
+  },
+  "arrival": [
+    0,
+    0,
+    3
+  ],
+  "route": [
+    {
+      "position": [
+        -2,
+        0,
+        1
+      ],
+      "wait": 2
+    },
+    {
+      "position": [
+        0,
+        0,
+        -4
+      ],
+      "portal": {
+        "address": "link://127.0.0.1:8011/traveler-b",
+        "arrival": [
+          0,
+          0,
+          3
+        ],
+        "position": [
+          0,
+          1.5,
+          -4
+        ],
+        "size": [
+          2,
+          3,
+          1
+        ]
+      }
+    }
+  ],
+  "seeds": [
+    {
+      "id": "wayfarer-01",
+      "kind": "liora",
+      "name": "Liora",
+      "position": [
+        0,
+        0,
+        3
+      ],
+      "yaw": 180
+    }
+  ],
+  "speed": 0.8
+}

@@ -1,0 +1,5 @@
+defaults {color:"#FFFFFF";opacity:1;emission:0;}
+material garden {color:"#FFFFFF";shading:"pbr";outline:0;}
+material hero {color:"#FFFFFF";shading:"toon";outline:.0048;}
+material title {color:"#FFF1CF";textBackground:false;opacity:1;emission:.15;}
+material inscription {color:"#EDE4CA";textBackground:false;opacity:1;}

@@ -1,0 +1,71 @@
+// Personal menus use semantic input; combat/progress still belong to the server.
+on onStart(ctx) {
+  store statusOpen = false;
+  ctx.setState({statusOpen:false});
+  ctx.setTransform("status_panel",{visible:false});
+}
+on onInput(ctx, event) {
+  if (event.action == "menu" && event.phase == "pressed") {
+    statusOpen = !statusOpen;
+    ctx.setState({statusOpen:statusOpen});
+    let viewer = ctx.getViewer();
+    ctx.setTransform("status_panel",{visible:statusOpen,position:[viewer.position[0] + viewer.forward[0] * 2.35,viewer.position[1] + viewer.forward[1] * 2.35 - .05,viewer.position[2] + viewer.forward[2] * 2.35],rotation:viewer.rotation});
+  }
+}
+on onUpdate(ctx, deltaSeconds) {
+  let viewer = ctx.getViewer();
+  ctx.setTransform({position:[viewer.position[0] + viewer.forward[0] * 2.6,viewer.position[1] + viewer.forward[1] * 2.6 - .84,viewer.position[2] + viewer.forward[2] * 2.6],rotation:viewer.rotation});
+  if (statusOpen) {
+    ctx.setTransform("status_panel",{position:[viewer.position[0] + viewer.forward[0] * 2.35,viewer.position[1] + viewer.forward[1] * 2.35 - .05,viewer.position[2] + viewer.forward[2] * 2.35],rotation:viewer.rotation});
+  }
+  let snapshot = ctx.getSharedState();
+  if (snapshot == null) {
+    ctx.setText("journey_status","ASTERFALL · 서버에 연결하는 중");
+    ctx.setText("journey_notice","스테이터스: Tab / 왼손 Y");
+    if (statusOpen) {
+      ctx.setText("status_identity","서버에 연결하는 중");
+      ctx.setText("status_vitals","HP — / —\nXP —");
+      ctx.setText("status_equipment","무기 —   ·   골드 —");
+      ctx.setText("status_quest","처치 —\n여정을 준비하고 있습니다");
+      ctx.setText("status_inventory","INVENTORY\n서버에 연결하는 중");
+    }
+  } else {
+    let self = snapshot.self;
+    let region = "도착의 초원";
+    if (viewer.position[2] < -75) { region = "새벽의 성소"; }
+    else { if (viewer.position[2] > 55) { region = "고요한 정원"; }
+    else { if (viewer.position[0] < -38) { region = "속삭이는 숲"; }
+    else { if (viewer.position[0] > 38) { region = "열린 관측소"; } } } }
+    ctx.setText("journey_status","Lv " + str(self.level) + "   HP " + str(self.hp) + "/" + str(self.maxHp) + "   ·   " + region);
+    let progress = "초원의 부름 " + str(min(self.kills,5)) + "/5";
+    if (self.quest == 1) { progress = "고대 원환 아래의 파수꾼을 이겨내세요"; }
+    if (self.quest == 2) { progress = "THE FIRST MEADOW · 첫 여정 완수"; }
+    if (self.hp <= 0) { progress = "잠시 후 야영지에서 다시 일어납니다"; }
+    ctx.setText("journey_notice",progress + "   ·   Tab / Y: Inventory\n" + snapshot.notice + "\n");
+    if (statusOpen) {
+      let weapon = "여행자의 검";
+      if (self.weapon == "iron") { weapon = "철검"; }
+      if (self.weapon == "star") { weapon = "별검"; }
+      ctx.setText("status_identity",self.name + "   ·   Lv " + str(self.level));
+      ctx.setText("status_vitals","HP " + str(self.hp) + " / " + str(self.maxHp) + "\nXP " + str(self.xp));
+      ctx.setText("status_equipment","무기 " + weapon + "   ·   골드 " + str(self.gold));
+      ctx.setText("status_quest","처치 " + str(self.kills) + "\n" + progress);
+      let bag = "INVENTORY";
+      let entries = 0;
+      for (let item of snapshot.inventory) {
+        let itemName = "고대 조각";
+        if (item.item == "moonleaf") { itemName = "달빛잎"; }
+        if (item.item == "sunbloom") { itemName = "햇살꽃"; }
+        if (item.item == "wildberry") { itemName = "산딸기"; }
+        if (item.item == "slime_gel") { itemName = "슬라임 젤"; }
+        if (item.item == "wolf_fang") { itemName = "늑대 송곳니"; }
+        if (entries % 2 == 0) { bag = bag + "\n"; }
+        else { bag = bag + "     ·     "; }
+        bag = bag + itemName + " " + str(item.count);
+        entries = entries + 1;
+      }
+      if (entries == 0) { bag = bag + "\n가방이 비어 있습니다\n꽃과 잎을 클릭하거나 트리거로 채집하세요"; }
+      ctx.setText("status_inventory",bag);
+    }
+  }
+}

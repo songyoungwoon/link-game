@@ -1,0 +1,2 @@
+defaults { color:"#FFFFFF";opacity:1;emission:0; }
+material stone { color:"#FFFFFF";shading:"pbr";outline:0; }

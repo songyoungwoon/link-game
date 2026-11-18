@@ -1,0 +1,5 @@
+// Requests describe intent only. The server validates distance, unlocks and costs.
+on onInteract(ctx, event) {
+  let snapshot = ctx.getSharedState();
+  if (snapshot != null) { ctx.sendAction(ctx.config.action, {target:ctx.config.target}); }
+}

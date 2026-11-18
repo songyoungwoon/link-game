@@ -1,0 +1,63 @@
+// Stable slots are populated by the server; the local player never renders twice.
+on onStart(ctx) {
+  store x = 0;
+  store z = 0;
+  store y = 0;
+  store yaw = 0;
+  store t = ctx.config.slot;
+  store wasActive = false;
+  store previousRespawn = -1;
+  store previousAttack = 0;
+  store strike = 0;
+}
+on onUpdate(ctx, deltaSeconds) {
+  t = t + deltaSeconds;
+  strike = max(0,strike - deltaSeconds);
+  let snapshot = ctx.getSharedState();
+  if (snapshot == null) {
+    ctx.setTransform({visible:false});
+    wasActive = false;
+  } else {
+    let player = snapshot.players[ctx.config.slot];
+    let separation = length(vsub(player.position,ctx.getViewer().position));
+    let visible = player.active && player.id != snapshot.self.id && separation > .65;
+    ctx.setTransform({visible:visible});
+    if (visible) {
+      let targetYaw = player.yaw + 180;
+      if (!wasActive || player.respawn != previousRespawn) {
+        x = player.position[0];z = player.position[2];y = player.position[1] - 1.65;
+        yaw = targetYaw;
+        previousAttack = player.attack;
+      }
+      let movement = clamp(abs(player.position[0] - x) + abs(player.position[2] - z),0,1);
+      x = mix(x,player.position[0],min(1,deltaSeconds * 12));
+      y = mix(y,player.position[1] - 1.65,min(1,deltaSeconds * 12));
+      z = mix(z,player.position[2],min(1,deltaSeconds * 12));
+      yaw = (yaw + ((targetYaw - yaw + 540) % 360 - 180) * min(1,deltaSeconds * 12) + 360) % 360;
+      if (player.attack > previousAttack) { strike = .3; }
+      previousAttack = player.attack;previousRespawn = player.respawn;
+      let id = "party_" + str(ctx.config.slot);
+      let pulse = sin((.3 - strike) / .3 * 3.14159265);
+      ctx.setTransform({position:[x,y,z],rotation:[0,yaw,0]});
+      if (player.hp > 0) {
+        ctx.setTransform(id + "_body", {position:[0,abs(sin(t * 7)) * movement * .04,0],rotation:[0,0,sin(t * 3) * movement * 2]});
+      } else {
+        ctx.setTransform(id + "_body", {position:[0,.2,0],rotation:[85,0,0]});
+      }
+      ctx.setTransform(id + "_leg_left", {rotation:[sin(t * 7) * 19 * movement,0,0]});
+      ctx.setTransform(id + "_leg_right", {rotation:[-sin(t * 7) * 19 * movement,0,0]});
+      ctx.setTransform(id + "_arm_right", {rotation:[-pulse * 65,0,0]});
+      ctx.setTransform(id + "_blade", {rotation:[-pulse * 65,0,-8]});
+      let health = clamp(player.hp / max(1,player.maxHp),.001,1);
+      let viewer = ctx.getViewer();
+      ctx.setTransform(id + "_hp", {scale:[health,1,1],rotation:[0,viewer.rotation[1] - yaw,0],visible:player.hp > 0});
+      ctx.setTransform(id + "_hp_bg", {rotation:[0,viewer.rotation[1] - yaw,0],visible:player.hp > 0});
+      ctx.setTransform(id + "_name", {rotation:[0,viewer.rotation[1] - yaw,0]});
+      ctx.setText(id + "_name",player.name + "  ·  Lv " + str(player.level));
+      if (player.weapon == "star") { ctx.setStyle(id + "_blade", {color:"#A2EDDF",emission:.65}); }
+      else { if (player.weapon == "iron") { ctx.setStyle(id + "_blade", {color:"#91B4B7",emission:0}); }
+      else { ctx.setStyle(id + "_blade", {color:"#C9D8DA",emission:0}); } }
+    }
+    wasActive = visible;
+  }
+}

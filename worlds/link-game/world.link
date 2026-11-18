@@ -1,0 +1,12 @@
+world {
+  version: "0.1";
+  id: "link-game";
+  name: "ASTERFALL · The Open Meadow";
+  elements: "scene.element";
+  style: "appearance.style";
+  scripts: ["scripts/monster.script","scripts/player.script","scripts/interaction.script","scripts/gather.script","scripts/weapon.script","scripts/hud.script"];
+  extensions: ["shared-state-v1","input-v1"];
+  entry: {"position":[0,1.65,28],"target":[0,1.65,-8]};
+  environment: {"background":"#DCAF94","grid":false,"fog":{"color":"#DCAF94","start":135,"end":310}};
+  walk: {"min":[-120,0,-140],"max":[120,4,110],"eyeHeight":1.65,"speed":3.6};
+}

@@ -1,0 +1,16 @@
+ASTERFALL cooperative PvE alpha
+Copyright 2026 Song Youngwoon
+
+Source code, documentation, and original procedural world assets are licensed
+under the Apache License, Version 2.0. See LICENSE.
+
+server/vendor/link_server.py is a copy of the LINK LAN Server
+asset transport, Copyright 2026 Song Youngwoon, Apache License Version 2.0.
+The source is from the sibling LINK/link-server project. models-v1 adds
+the bounded .glb asset media type (model/gltf-binary, 16 MiB maximum) and
+HDR environments (image/vnd.radiance, 8 MiB maximum).
+No existing franchise characters, artwork, maps, or personal photos are included.
+Stone Sanctum architecture and its generator are original Apache-2.0 work.
+Its Poly Haven surface maps and HDRI retain CC0-1.0 terms. See
+worlds/stone-sanctum/sources/polyhaven-materials.json and
+worlds/stone-sanctum/lighting/SOURCE.json for authors, URLs, and hashes.

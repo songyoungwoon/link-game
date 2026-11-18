@@ -1,0 +1,48 @@
+// Presentation only. Authority and portal travel live on the servers.
+on onStart(ctx) {
+ store npcId = "";
+ store renderEpoch = 0;
+ store currentX = 0;
+ store currentY = 0;
+ store currentZ = 3;
+ store currentYaw = 180;
+ store wasVisible = false;
+ ctx.setTransform("npc_slot",{visible:false});
+ ctx.playAnimation("traveler_model","Idle",true,1);
+}
+on onUpdate(ctx, deltaSeconds) {
+ let snapshot = ctx.getSharedState();
+ let selected = null;
+ if (snapshot != null) {
+  for (let npc of snapshot.npcs) {
+   if (selected == null && npc.kind == "liora") { selected = npc; }
+  }
+ }
+ if (selected == null) {
+  ctx.setTransform("npc_slot",{visible:false});
+  wasVisible = false;
+  ctx.setText("traveler_status","WAITING FOR LIORA\nHer journey continues on the other server.");
+ } else {
+  let targetYaw = (selected.yaw + 360) % 360;
+  if (!wasVisible || npcId != selected.id || renderEpoch != selected.epoch) {
+   currentX = selected.position[0];
+   currentY = selected.position[1];
+   currentZ = selected.position[2];
+   currentYaw = targetYaw;
+  } else {
+   let blend = min(1,deltaSeconds * 14);
+   currentX = mix(currentX,selected.position[0],blend);
+   currentY = mix(currentY,selected.position[1],blend);
+   currentZ = mix(currentZ,selected.position[2],blend);
+   currentYaw = (currentYaw + ((targetYaw - currentYaw + 540) % 360 - 180) * blend + 360) % 360;
+  }
+  npcId = selected.id;
+  renderEpoch = selected.epoch;
+  wasVisible = true;
+  ctx.setTransform("npc_slot",{visible:true});
+  ctx.setTransform("traveler_model",{position:[currentX,currentY,currentZ],rotation:[0,currentYaw,0],visible:true});
+  if (selected.animation == "Walk") { ctx.playAnimation("traveler_model","Walk",true,1); }
+  else { ctx.playAnimation("traveler_model","Idle",true,1); }
+  ctx.setText("traveler_status",selected.name + "  /  " + selected.id + "\nJourneys " + str(selected.journey) + "    Epoch " + str(selected.epoch));
+ }
+}

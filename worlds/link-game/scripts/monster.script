@@ -1,0 +1,72 @@
+// Snapshot-only presentation. All damage, death, loot and respawns belong to the server.
+on onStart(ctx) {
+  store x = ctx.config.x;
+  store z = ctx.config.z;
+  store yaw = 180;
+  store t = ctx.config.phase;
+  store previousHp = 0;
+  store previousAttack = 0;
+  store wasAlive = false;
+  store hurt = 0;
+  store strike = 0;
+}
+on onUpdate(ctx, deltaSeconds) {
+  t = t + deltaSeconds;
+  hurt = max(0, hurt - deltaSeconds);
+  strike = max(0, strike - deltaSeconds);
+  let snapshot = ctx.getSharedState();
+  if (snapshot == null) {
+    ctx.setTransform({visible:false});
+    wasAlive = false;
+  } else {
+    let monster = snapshot.monsters[ctx.config.index];
+    let alive = monster.active && monster.hp > 0;
+    ctx.setTransform({visible:alive});
+    if (alive) {
+      let targetYaw = monster.yaw + 180;
+      if (!wasAlive) {
+        x = monster.position[0];
+        z = monster.position[2];
+        yaw = targetYaw;
+        previousHp = monster.hp;
+        previousAttack = monster.attack;
+      }
+      let movement = clamp(abs(monster.position[0] - x) + abs(monster.position[2] - z), 0, 1);
+      x = mix(x, monster.position[0], min(1, deltaSeconds * 11));
+      z = mix(z, monster.position[2], min(1, deltaSeconds * 11));
+      yaw = (yaw + ((targetYaw - yaw + 540) % 360 - 180) * min(1, deltaSeconds * 11) + 360) % 360;
+      if (monster.hp < previousHp) { hurt = .22; }
+      if (monster.attack > previousAttack) { strike = .34; }
+      previousHp = monster.hp;
+      previousAttack = monster.attack;
+      let id = ctx.config.target;
+      let pulse = sin((.34 - strike) / .34 * 3.14159265);
+      let breathing = 1 + sin(t * 2.1) * .027;
+      ctx.setTransform({position:[x,0,z],rotation:[0,yaw,0]});
+      ctx.setTransform(id + "_body", {position:[0,ctx.config.bodyHeight + sin(t * 2.1) * .035 + abs(sin(t * 6)) * movement * .1,0],rotation:[pulse * 11,0,hurt * 27],scale:[breathing,1 / breathing,breathing]});
+      if (hurt > 0) { ctx.setStyle(id + "_skin", {color:"#FFF3DF",emission:.3}); }
+      else { ctx.setStyle(id + "_skin", {color:ctx.config.color,emission:0}); }
+      if (ctx.config.kind == "wolf") {
+        ctx.setTransform(id + "_front", {rotation:[sin(t * 8) * 29 * movement - pulse * 23,0,0]});
+        ctx.setTransform(id + "_back", {rotation:[-sin(t * 8) * 29 * movement + pulse * 13,0,0]});
+      }
+      if (ctx.config.kind == "golem" || ctx.config.kind == "warden") {
+        ctx.setTransform(id + "_left", {rotation:[sin(t * 4) * 12 * movement - pulse * 58,0,-5]});
+        ctx.setTransform(id + "_right", {rotation:[-sin(t * 4) * 12 * movement - pulse * 74,0,5]});
+      }
+      let health = clamp(monster.hp / max(1, monster.maxHp), .001, 1);
+      let viewer = ctx.getViewer();
+      ctx.setTransform(id + "_health", {rotation:[0,viewer.rotation[1] - yaw,0]});
+      ctx.setTransform(id + "_hp", {scale:[health,1,1]});
+    }
+    wasAlive = alive;
+  }
+}
+on onInteract(ctx, event) {
+  let snapshot = ctx.getSharedState();
+  if (snapshot != null) {
+    ctx.sendAction("attack", {target:ctx.config.target});
+    let weapon = ctx.getState("weapon_control");
+    ctx.setState("weapon_control", {swing:weapon.swing + 1});
+  }
+}

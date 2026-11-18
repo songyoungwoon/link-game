@@ -1,0 +1,30 @@
+// Local animation presentation. No changes to multiplayer RPG progress.
+on onStart(ctx) {
+ store elapsed = 0;
+ store phase = 0;
+ store attackLeft = 0;
+ store currentX = 0;
+ ctx.playAnimation("hero_model","Idle",true,1);
+}
+on onUpdate(ctx, deltaSeconds) {
+ elapsed = elapsed + deltaSeconds;
+ attackLeft = max(0,attackLeft - deltaSeconds);
+ if (attackLeft > 0) {
+  ctx.setTransform("hero_model",{position:[currentX,0,-5],rotation:[0,0,0]});
+ } else {
+  if (phase == 3) {phase = 0;elapsed = 0;ctx.playAnimation("hero_model","Idle",true,1);}
+  if (phase == 0 && elapsed > 3.5) {phase = 1;elapsed = 0;ctx.playAnimation("hero_model","Walk",true,.88);}
+  if (phase == 1) {
+   currentX = sin(min(elapsed / 5,1) * 6.2831853) * 1.65;
+   let facing = 90;
+   if (elapsed > 1.25 && elapsed < 3.75) {facing = -90;}
+   ctx.setTransform("hero_model",{position:[currentX,0,-5],rotation:[0,facing,0]});
+   if (elapsed >= 5) {phase = 2;elapsed = 0;currentX = 0;ctx.setTransform("hero_model",{position:[0,0,-5],rotation:[0,0,0]});ctx.playAnimation("hero_model","Attack",false,1);}
+  }
+  if (phase == 2 && elapsed > 2) {phase = 0;elapsed = 0;ctx.playAnimation("hero_model","Idle",true,1);}
+ }
+}
+on onInteract(ctx, event) {
+ phase = 3;elapsed = 0;attackLeft = 1.4;
+ ctx.playAnimation("hero_model","Attack",false,1);
+}

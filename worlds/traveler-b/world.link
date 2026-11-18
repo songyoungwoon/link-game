@@ -1,0 +1,13 @@
+world {
+ version:"0.1";
+ id:"traveler-b";
+ name:"The Wayfarer's Passage / Azure Court";
+ elements:"scene.element";
+ style:"appearance.style";
+ scripts:["scripts/traveler.script"];
+ extensions:["models-v1","npc-travel-v1"];
+ entry:{"position":[5.2,1.65,4.6],"target":[0,1,-1]};
+ environment:{"background":"#B6CBDD","grid":false,"fog":{"color":"#B6CBDD","start":18,"end":48}};
+ walk:{"min":[-8,0,-8],"max":[8,4,8],"eyeHeight":1.65,"speed":2};
+ portals:[{"id":"wayfarer_gate","address":"link://127.0.0.1:8010/traveler-a","position":[0,1.5,-4],"size":[2,3,1]}];
+}

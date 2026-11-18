@@ -1,0 +1,20 @@
+defaults {color:"#FFFFFF";opacity:1;emission:0;}
+material island {color:"#71635B";}
+material lawn {color:"#8B9C7A";}
+material paving {color:"#C4B49C";}
+material joint {color:"#A99A82";}
+material inlay {color:"#D4B882";}
+material stone {color:"#DDD2B8";}
+material trim {color:"#E8D9B3";}
+material glow {color:"#FCDB9A";emission:1.2;}
+material veil {color:"#E8BF82";opacity:0.2;emission:0.3;}
+material soil {color:"#6C6F56";}
+material stem {color:"#68765A";}
+material leaf {color:"#8B9B72";}
+material petal {color:"#EAD9B7";}
+material ridge {color:"#A7AC97";}
+material sun {color:"#FFE8BF";emission:1.2;}
+material sign {color:"#384B43";}
+material letter {color:"#F5EBD6";textBackground:false;emission:0.1;}
+material hero {color:"#FFFFFF";shading:"toon";outline:.0048;}
+material title {color:"#F5EBD6";textBackground:false;emission:.10;}

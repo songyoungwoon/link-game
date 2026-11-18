@@ -1,0 +1,49 @@
+{
+  "world": "stone-sanctum",
+  "generator": "tools/generate_stone_sanctum.py",
+  "geometryLicense": "Apache-2.0",
+  "textures": "Poly Haven CC0-1.0",
+  "assets": [
+    {
+      "file": "sanctuary.glb",
+      "bytes": 8988128,
+      "sha256": "9fd13122701dc0ba936c37eb0ef612496fff760d4ef3ee4db495408155e3c5d4",
+      "vertices": 65217,
+      "triangles": 46252,
+      "primitives": 5,
+      "nodes": 1,
+      "joints": 0,
+      "images": 6,
+      "clips": [],
+      "compressedImageBytes": 5572943
+    },
+    {
+      "file": "paving.glb",
+      "bytes": 7775728,
+      "sha256": "45e6188963a9f4ad7ab423c8c1da3c7161a3baa9aaa062cda2759ae4d757f1f2",
+      "vertices": 11136,
+      "triangles": 5104,
+      "primitives": 1,
+      "nodes": 1,
+      "joints": 0,
+      "images": 3,
+      "clips": [],
+      "compressedImageBytes": 7208321
+    },
+    {
+      "file": "rubble.glb",
+      "bytes": 6168072,
+      "sha256": "f436ad19977e621159742acfa70c09c364084123fe0bef558237cfc4840abc62",
+      "vertices": 10614,
+      "triangles": 13616,
+      "primitives": 2,
+      "nodes": 1,
+      "joints": 0,
+      "images": 6,
+      "clips": [],
+      "compressedImageBytes": 5572943
+    }
+  ],
+  "totalVertices": 86967,
+  "totalTriangles": 64972
+}

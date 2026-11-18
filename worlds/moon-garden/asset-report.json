@@ -1,0 +1,38 @@
+{
+  "generator": "tools/generate_moon_garden.py",
+  "license": "Apache-2.0",
+  "units": "meters",
+  "up": "+Y",
+  "characterFront": "+Z",
+  "character": "Liora - original Garden Wayfarer",
+  "assets": [
+    {
+      "file": "hero.glb",
+      "bytes": 779304,
+      "sha256": "51e0a6ba54e2fdcaa1726bbe003f23f4805c639540b441d8230285997b80ea3b",
+      "vertices": 8815,
+      "triangles": 11632,
+      "primitives": 13,
+      "nodes": 23,
+      "joints": 21,
+      "images": 2,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Attack"
+      ]
+    },
+    {
+      "file": "garden.glb",
+      "bytes": 2706032,
+      "sha256": "cd120d535e3c58a12fa4c6b7980e416db9dbd93ac00b42de8e36d6cda78578bf",
+      "vertices": 43774,
+      "triangles": 44026,
+      "primitives": 19,
+      "nodes": 1,
+      "joints": 0,
+      "images": 6,
+      "clips": []
+    }
+  ]
+}

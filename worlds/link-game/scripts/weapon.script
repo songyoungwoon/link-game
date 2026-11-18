@@ -1,0 +1,25 @@
+// The local hand pose comes from the desktop/VR viewer, never from a second avatar.
+on onStart(ctx) {
+  store swing = 0;
+  store previousSwing = 0;
+  store previousAttack = 0;
+  store t = 0;
+}
+on onUpdate(ctx, deltaSeconds) {
+  t = t + deltaSeconds;
+  swing = max(0,swing - deltaSeconds);
+  let snapshot = ctx.getSharedState();
+  if (snapshot == null) { ctx.setTransform({visible:false}); }
+  else {
+    let self = snapshot.self;
+    let state = ctx.getState();
+    if (state.swing != previousSwing || self.attack > previousAttack) { swing = .3; }
+    previousSwing = state.swing;previousAttack = self.attack;
+    let viewer = ctx.getViewer();
+    let pulse = sin((.3 - swing) / .3 * 3.14159265);
+    ctx.setTransform({visible:self.hp > 0 && !ctx.getState("journey_hud").statusOpen,position:viewer.weaponPosition,rotation:[viewer.weaponRotation[0] + pulse * 67,viewer.weaponRotation[1] + pulse * 10,viewer.weaponRotation[2] - pulse * 17]});
+    if (self.weapon == "star") { ctx.setStyle("held_blade", {color:"#A2EDDF",emission:.7}); }
+    else { if (self.weapon == "iron") { ctx.setStyle("held_blade", {color:"#91B4B7",emission:.08}); }
+    else { ctx.setStyle("held_blade", {color:"#C9D8DA",emission:0}); } }
+  }
+}

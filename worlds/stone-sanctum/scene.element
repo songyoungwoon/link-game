@@ -1,0 +1,13 @@
+// Original architecture. PBR maps and HDR environment: Poly Haven CC0.
+scene {
+ object stone_sanctum {
+  name: "STONE SANCTUM - The Sunlit Archive";
+  component sanctuary {
+   name: "Weathered nave, arcade and carved apse";
+   raycast:false;
+   element architecture_model { geometry:{type:"model",source:"models/sanctuary.glb"};style:"stone"; }
+   element paving_model { geometry:{type:"model",source:"models/paving.glb"};style:"stone"; }
+   element rubble_model { geometry:{type:"model",source:"models/rubble.glb"};style:"stone"; }
+  }
+ }
+}

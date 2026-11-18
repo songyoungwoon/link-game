@@ -1,0 +1,21 @@
+{
+  "world": "traveler-a",
+  "address": "link://127.0.0.1:8010/traveler-a",
+  "peer": "link://127.0.0.1:8011/traveler-b",
+  "generator": "tools/generate_npc_journey.py",
+  "license": "Apache-2.0",
+  "nodes": 158,
+  "model": {
+    "source": "../moon-garden/models/hero.glb",
+    "file": "models/liora.glb",
+    "sha256": "51e0a6ba54e2fdcaa1726bbe003f23f4805c639540b441d8230285997b80ea3b",
+    "bytes": 779304,
+    "character": "Liora - original Garden Wayfarer",
+    "joints": 21,
+    "clips": [
+      "Idle",
+      "Walk",
+      "Attack"
+    ]
+  }
+}

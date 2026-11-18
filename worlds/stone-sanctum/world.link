@@ -1,0 +1,13 @@
+world {
+ version:"0.1";
+ id:"stone-sanctum";
+ name:"STONE SANCTUM - The Sunlit Archive";
+ elements:"scene.element";
+ style:"appearance.style";
+ scripts:[];
+ extensions:["models-v1","lighting-v1"];
+ entry:{"position":[2.15,1.68,3.2],"target":[-0.45,2.15,-7.8]};
+ views:[{"name":"Entry - nave and carved apse","position":[2.15,1.68,3.2],"target":[-0.45,2.15,-7.8]},{"name":"Stone detail - capital and relief","position":[-1.55,2.25,-8.1],"target":[-3.28,3.35,-8.4]},{"name":"Corridor - pillars and broken vault","position":[-3.85,1.68,2.8],"target":[-3.7,2.55,-9.9]},{"name":"Altar - layered doorway and sun carving","position":[1.55,1.82,-6.75],"target":[0,2.7,-11.7]}];
+ environment:{"background":"#B5C4CD","grid":false,"fog":{"color":"#B5C4CD","start":28,"end":65},"lighting":{"sunDirection":[-0.55,0.78,0.3],"sunColor":"#FFF0D9","sunIntensity":3.2,"skyColor":"#9BBBD6","groundColor":"#5E4B36","ambientIntensity":0.12,"exposure":0.9,"environmentMap":"lighting/quarry_01_1k.hdr","environmentIntensity":0.28,"shadow":{"enabled":true,"resolution":2048,"center":[0,2,-4.6],"extent":16,"bias":0.0015,"normalBias":0.02},"points":[{"position":[-1.82,1.5,-9.72],"color":"#FFAC58","intensity":12,"range":4.2},{"position":[1.82,1.5,-9.72],"color":"#FFAC58","intensity":12,"range":4.2},{"position":[0.65,1.6,-13.2],"color":"#FFD2A0","intensity":2.5,"range":2.8}]}};
+ walk:{"min":[-2.65,0,-8.2],"max":[2.65,3,3.8],"eyeHeight":1.68,"speed":1.8};
+}

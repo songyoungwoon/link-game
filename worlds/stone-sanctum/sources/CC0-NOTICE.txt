@@ -1,0 +1,9 @@
+Poly Haven material textures
+
+Copyright waived under CC0 1.0 Universal by the asset authors.
+Official license: https://polyhaven.com/license
+CC0 legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Each original map, author, official download URL, size and SHA-256 is listed in polyhaven-materials.json.
+These material maps may be used and redistributed, including commercially, under CC0.
+The original LINK architecture meshes and generator are separately Apache-2.0.

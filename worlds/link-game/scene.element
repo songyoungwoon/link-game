@@ -1,0 +1,2506 @@
+// Original procedural ASTERFALL scene; reproducible via tools/generate_world.py.
+scene {
+  object asterfall {
+    name: "ASTERFALL · The Open Meadow";
+    component meadow_landscape {
+      raycast: false;
+      element meadow_island {
+        geometry: {"type":"box","size":[242,14,252]};
+        style: "cliff";
+        position: [0,-7.2,-15];
+      }
+      element meadow_surface {
+        geometry: {"type":"box","size":[242,0.4,252]};
+        style: "grass";
+        position: [0,-0.2,-15];
+      }
+      element old_pilgrims_road {
+        geometry: {"type":"box","size":[5.0,0.035,220]};
+        style: "path";
+        position: [0,0.02,-20];
+      }
+      element spawn_plaza {
+        geometry: {"type":"box","size":[16,0.045,18]};
+        style: "paving";
+        position: [0,0.027,26];
+      }
+      element forest_trail {
+        geometry: {"type":"box","size":[3.6,0.026,74.70609078247904]};
+        style: "path";
+        position: [-33.0,0.025,-7.5];
+        rotation: [0,-117.93714282653859,0];
+      }
+      element ruins_trail {
+        geometry: {"type":"box","size":[3.6,0.026,64.6297145282261]};
+        style: "path";
+        position: [32.0,0.025,-28.5];
+        rotation: [0,98.00472885729286,0];
+      }
+      element garden_trail {
+        geometry: {"type":"box","size":[3.6,0.026,41.86884283091664]};
+        style: "path";
+        position: [-13.5,0.025,64.0];
+        rotation: [0,-40.155999624919325,0];
+      }
+      element east_meadow_trail {
+        geometry: {"type":"box","size":[2.8,0.026,65.39113089708727]};
+        style: "path";
+        position: [30.0,0.025,53.0];
+        rotation: [0,66.5713071912546,0];
+      }
+      element meadow_rise_0 {
+        geometry: {"type":"sphere","radius":1};
+        style: "hill";
+        position: [-131,-8,-65];
+        scale: [25,20,48];
+      }
+      element meadow_rise_1 {
+        geometry: {"type":"sphere","radius":1};
+        style: "hill";
+        position: [130,-8,-50];
+        scale: [26,28,42];
+      }
+      element meadow_rise_2 {
+        geometry: {"type":"sphere","radius":1};
+        style: "hill";
+        position: [-70,-8,-145];
+        scale: [50,20,18];
+      }
+      element meadow_rise_3 {
+        geometry: {"type":"sphere","radius":1};
+        style: "hill";
+        position: [78,-8,-145];
+        scale: [46,23,20];
+      }
+      element meadow_rise_4 {
+        geometry: {"type":"sphere","radius":1};
+        style: "hill";
+        position: [-121,-8,92];
+        scale: [28,16,27];
+      }
+      element meadow_rise_5 {
+        geometry: {"type":"sphere","radius":1};
+        style: "hill";
+        position: [120,-8,91];
+        scale: [28,21,25];
+      }
+      element weathered_boulder_0 {
+        geometry: {"type":"sphere","radius":1};
+        style: "rock";
+        position: [-35,0.4,5];
+        scale: [3.0,1.9500000000000002,2.55];
+        rotation: [0,0,13];
+      }
+      element weathered_boulder_1 {
+        geometry: {"type":"sphere","radius":1};
+        style: "rock";
+        position: [36,0.4,1];
+        scale: [2.5,1.625,2.125];
+        rotation: [0,37,13];
+      }
+      element weathered_boulder_2 {
+        geometry: {"type":"sphere","radius":1};
+        style: "rock";
+        position: [-94,0.4,-75];
+        scale: [5.5,3.575,4.675];
+        rotation: [0,74,13];
+      }
+      element weathered_boulder_3 {
+        geometry: {"type":"sphere","radius":1};
+        style: "rock";
+        position: [90,0.4,-103];
+        scale: [6.5,4.2250000000000005,5.5249999999999995];
+        rotation: [0,111,13];
+      }
+      element weathered_boulder_4 {
+        geometry: {"type":"sphere","radius":1};
+        style: "rock";
+        position: [-95,0.4,71];
+        scale: [4.3,2.795,3.655];
+        rotation: [0,148,13];
+      }
+      element weathered_boulder_5 {
+        geometry: {"type":"sphere","radius":1};
+        style: "rock";
+        position: [71,0.4,86];
+        scale: [4.1,2.665,3.4849999999999994];
+        rotation: [0,185,13];
+      }
+    }
+    component distant_evening {
+      raycast: false;
+      element evening_sun {
+        geometry: {"type":"sphere","radius":22};
+        style: "sun";
+        position: [-90,55,-225];
+      }
+      element first_evening_star {
+        geometry: {"type":"sphere","radius":1.5};
+        style: "rune";
+        position: [70,69,-240];
+      }
+      element evening_cloud_0 {
+        geometry: {"type":"sphere","radius":1};
+        style: "cloud";
+        position: [-106,47,-148];
+        scale: [28,3.1,9];
+      }
+      element evening_cloud_1 {
+        geometry: {"type":"sphere","radius":1};
+        style: "cloud";
+        position: [94,52,-180];
+        scale: [33,3.1,9];
+      }
+      element evening_cloud_2 {
+        geometry: {"type":"sphere","radius":1};
+        style: "cloud";
+        position: [-42,61,-255];
+        scale: [38,3.1,9];
+      }
+      element evening_cloud_3 {
+        geometry: {"type":"sphere","radius":1};
+        style: "cloud";
+        position: [125,34,55];
+        scale: [43,3.1,9];
+      }
+    }
+    component mother_of_the_meadow {
+      position: [-70,0,-28];
+      raycast: false;
+      element ancient_trunk {
+        geometry: {"type":"cylinder","radius":2.7,"radiusTop":1.45,"height":32};
+        style: "bark";
+        position: [0,16,0];
+        rotation: [0,0,-6];
+      }
+      element ancient_branch_0 {
+        geometry: {"type":"cylinder","radius":1.0,"radiusTop":0.35,"height":16};
+        style: "bark";
+        position: [-4,23,0];
+        rotation: [17,0,51];
+      }
+      element ancient_branch_1 {
+        geometry: {"type":"cylinder","radius":1.0,"radiusTop":0.35,"height":16};
+        style: "bark";
+        position: [4.2,26,-1];
+        rotation: [17,0,-48];
+      }
+      element ancient_branch_2 {
+        geometry: {"type":"cylinder","radius":1.0,"radiusTop":0.35,"height":16};
+        style: "bark";
+        position: [1,28,4];
+        rotation: [17,0,35];
+      }
+      element ancient_crown_0 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [-9,33,0];
+        scale: [17,5.1,12];
+      }
+      element ancient_crown_1 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [5,37,-1];
+        scale: [17,5,13];
+      }
+      element ancient_crown_2 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [-1,41,2];
+        scale: [14,4.2,12];
+      }
+      element forest_waymark {
+        geometry: {"type":"plane","size":[8.0,0.65]};
+        style: "letter";
+        position: [0,5,8];
+        text: "WEST / THE WHISPERWOOD";
+        raycast: false;
+      }
+    }
+    component meadow_tree_0 {
+      position: [-35,0,-14];
+      raycast: false;
+      element tree_trunk_0 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":12};
+        style: "bark";
+        position: [0,6.0,0];
+      }
+      element tree_crown_0 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,12,0];
+        scale: [6.48,3.84,5.64];
+      }
+    }
+    component meadow_tree_1 {
+      position: [-50,0,-50];
+      raycast: false;
+      element tree_trunk_1 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":16};
+        style: "bark";
+        position: [0,8.0,0];
+      }
+      element tree_crown_1 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,16,0];
+        scale: [8.64,5.12,7.52];
+      }
+    }
+    component meadow_tree_2 {
+      position: [-89,0,-21];
+      raycast: false;
+      element tree_trunk_2 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":17};
+        style: "bark";
+        position: [0,8.5,0];
+      }
+      element tree_crown_2 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,17,0];
+        scale: [9.18,5.44,7.989999999999999];
+      }
+    }
+    component meadow_tree_3 {
+      position: [-95,0,-55];
+      raycast: false;
+      element tree_trunk_3 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":14};
+        style: "bark";
+        position: [0,7.0,0];
+      }
+      element tree_crown_3 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,14,0];
+        scale: [7.5600000000000005,4.48,6.58];
+      }
+    }
+    component meadow_tree_4 {
+      position: [-75,0,15];
+      raycast: false;
+      element tree_trunk_4 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":15};
+        style: "bark";
+        position: [0,7.5,0];
+      }
+      element tree_crown_4 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,15,0];
+        scale: [8.100000000000001,4.8,7.05];
+      }
+    }
+    component meadow_tree_5 {
+      position: [-106,0,8];
+      raycast: false;
+      element tree_trunk_5 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":12};
+        style: "bark";
+        position: [0,6.0,0];
+      }
+      element tree_crown_5 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,12,0];
+        scale: [6.48,3.84,5.64];
+      }
+    }
+    component meadow_tree_6 {
+      position: [-52,0,2];
+      raycast: false;
+      element tree_trunk_6 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":11};
+        style: "bark";
+        position: [0,5.5,0];
+      }
+      element tree_crown_6 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,11,0];
+        scale: [5.94,3.52,5.17];
+      }
+    }
+    component meadow_tree_7 {
+      position: [36,0,28];
+      raycast: false;
+      element tree_trunk_7 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":12};
+        style: "bark";
+        position: [0,6.0,0];
+      }
+      element tree_crown_7 {
+        geometry: {"type":"sphere","radius":1};
+        style: "canopy";
+        position: [0,12,0];
+        scale: [6.48,3.84,5.64];
+      }
+    }
+    component meadow_tree_8 {
+      position: [70,0,42];
+      raycast: false;
+      element tree_trunk_8 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":14};
+        style: "bark";
+        position: [0,7.0,0];
+      }
+      element tree_crown_8 {
+        geometry: {"type":"sphere","radius":1};
+        style: "canopy";
+        position: [0,14,0];
+        scale: [7.5600000000000005,4.48,6.58];
+      }
+    }
+    component meadow_tree_9 {
+      position: [-66,0,81];
+      raycast: false;
+      element tree_trunk_9 {
+        geometry: {"type":"cylinder","radius":0.58,"radiusTop":0.27,"height":13};
+        style: "bark";
+        position: [0,6.5,0];
+      }
+      element tree_crown_9 {
+        geometry: {"type":"sphere","radius":1};
+        style: "forest_canopy";
+        position: [0,13,0];
+        scale: [7.0200000000000005,4.16,6.109999999999999];
+      }
+    }
+    component the_unfinished_gate {
+      position: [0,0,-125];
+      raycast: false;
+      element warden_court {
+        geometry: {"type":"box","size":[28,0.055,23]};
+        style: "paving";
+        position: [0,0.032,9];
+      }
+      element ancient_ring_00 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [10.5,10.7,0];
+        rotation: [0,0,90.0];
+      }
+      element ancient_ring_01 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [9.4601731129754,15.25577926073436,0];
+        rotation: [0,0,115.7143];
+      }
+      element ancient_ring_02 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [6.546642919516703,18.909230565914314,0];
+        rotation: [0,0,141.4286];
+      }
+      element ancient_ring_03 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [2.336469806541302,20.93674307790915,0];
+        rotation: [0,0,167.1429];
+      }
+      element ancient_ring_04 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-2.3364698065413005,20.93674307790915,0];
+        rotation: [0,0,192.8571];
+      }
+      element ancient_ring_05 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-6.546642919516701,18.909230565914314,0];
+        rotation: [0,0,218.5714];
+      }
+      element ancient_ring_06 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-9.4601731129754,15.25577926073436,0];
+        rotation: [0,0,244.2857];
+      }
+      element ancient_ring_07 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-10.5,10.700000000000001,0];
+        rotation: [0,0,270.0];
+      }
+      element ancient_ring_08 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-9.4601731129754,6.1442207392656405,0];
+        rotation: [0,0,295.7143];
+      }
+      element ancient_ring_09 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-6.546642919516704,2.4907694340856867,0];
+        rotation: [0,0,321.4286];
+      }
+      element ancient_ring_10 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [-2.336469806541303,0.4632569220908511,0];
+        rotation: [0,0,347.1429];
+      }
+      element ancient_ring_11 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [2.33646980654129,0.46325692209084934,0];
+        rotation: [0,0,372.8571];
+      }
+      element ancient_ring_12 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [6.5466429195167,2.490769434085685,0];
+        rotation: [0,0,398.5714];
+      }
+      element ancient_ring_13 {
+        geometry: {"type":"box","size":[4.7,1.0,2.3]};
+        style: "ruin";
+        position: [9.460173112975403,6.144220739265646,0];
+        rotation: [0,0,424.2857];
+      }
+      element gate_anchor_left {
+        geometry: {"type":"cylinder","radius":1.7,"radiusTop":1.1,"height":7};
+        style: "ruin";
+        position: [-13,3.5,0];
+      }
+      element gate_fire_left {
+        geometry: {"type":"sphere","radius":0.38};
+        style: "rune";
+        position: [-13,7.3,0];
+      }
+      element gate_anchor_right {
+        geometry: {"type":"cylinder","radius":1.7,"radiusTop":1.1,"height":7};
+        style: "ruin";
+        position: [13,3.5,0];
+      }
+      element gate_fire_right {
+        geometry: {"type":"sphere","radius":0.38};
+        style: "rune";
+        position: [13,7.3,0];
+      }
+      element sanctum_waymark {
+        geometry: {"type":"plane","size":[10,0.75]};
+        style: "letter";
+        position: [0,3,2];
+        text: "NORTH / THE DAWN SANCTUM";
+        raycast: false;
+      }
+    }
+    component eastern_observatory {
+      position: [64,0,-33];
+      raycast: false;
+      element observatory_floor {
+        geometry: {"type":"box","size":[24,0.06,20]};
+        style: "paving";
+        position: [0,0.025,0];
+      }
+      element observatory_roof {
+        geometry: {"type":"box","size":[23,0.6,19]};
+        style: "roof";
+        position: [0,7.0,0];
+      }
+      element observatory_column_0 {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.49,"height":6.7};
+        style: "ruin";
+        position: [-9,3.35,-7];
+      }
+      element observatory_column_1 {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.49,"height":6.7};
+        style: "ruin";
+        position: [0,3.35,-7];
+      }
+      element observatory_column_2 {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.49,"height":6.7};
+        style: "ruin";
+        position: [9,3.35,-7];
+      }
+      element observatory_column_3 {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.49,"height":6.7};
+        style: "ruin";
+        position: [-9,3.35,7];
+      }
+      element observatory_column_4 {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.49,"height":6.7};
+        style: "ruin";
+        position: [0,3.35,7];
+      }
+      element observatory_column_5 {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.49,"height":6.7};
+        style: "ruin";
+        position: [9,3.35,7];
+      }
+      element observatory_arch_left {
+        geometry: {"type":"box","size":[1.1,4.8,1.2]};
+        style: "ruin";
+        position: [-3.8,2.4,-6];
+      }
+      element observatory_arch_right {
+        geometry: {"type":"box","size":[1.1,4.8,1.2]};
+        style: "ruin";
+        position: [3.8,2.4,-6];
+      }
+      element observatory_arch_top {
+        geometry: {"type":"box","size":[8.7,1.0,1.2]};
+        style: "ruin";
+        position: [0,4.8,-6];
+      }
+      element observatory_oracle {
+        geometry: {"type":"sphere","radius":0.65};
+        style: "rune";
+        position: [0,1.4,-2];
+      }
+      element observatory_waymark {
+        geometry: {"type":"plane","size":[8,0.6]};
+        style: "letter";
+        position: [0,5.8,8];
+        text: "EAST / THE OPEN OBSERVATORY";
+        raycast: false;
+      }
+    }
+    component southern_gardens {
+      position: [-28,0,80];
+      raycast: false;
+      element garden_pool {
+        geometry: {"type":"plane","size":[37,25]};
+        style: "water";
+        position: [0,0.022,0];
+        rotation: [-90,0,0];
+      }
+      element garden_bridge {
+        geometry: {"type":"box","size":[4.0,0.09,30]};
+        style: "wood";
+        position: [0,0.045,0];
+      }
+      element garden_bridge_rail_m1 {
+        geometry: {"type":"box","size":[0.12,0.12,28]};
+        style: "gold";
+        position: [-2.1,0.9,0];
+      }
+      element garden_bridge_post_m1 {
+        geometry: {"type":"box","size":[0.18,0.95,0.18]};
+        style: "wood";
+        position: [-2.1,0.475,-10];
+      }
+      element garden_bridge_rail_1 {
+        geometry: {"type":"box","size":[0.12,0.12,28]};
+        style: "gold";
+        position: [2.1,0.9,0];
+      }
+      element garden_bridge_post_1 {
+        geometry: {"type":"box","size":[0.18,0.95,0.18]};
+        style: "wood";
+        position: [2.1,0.475,-10];
+      }
+      element garden_pavilion_roof {
+        geometry: {"type":"box","size":[12,0.4,8]};
+        style: "roof";
+        position: [0,4.6,21];
+      }
+      element garden_pavilion_column_0 {
+        geometry: {"type":"cylinder","radius":0.35,"radiusTop":0.3,"height":4.4};
+        style: "ruin";
+        position: [-5,2.2,18];
+      }
+      element garden_pavilion_column_1 {
+        geometry: {"type":"cylinder","radius":0.35,"radiusTop":0.3,"height":4.4};
+        style: "ruin";
+        position: [5,2.2,18];
+      }
+      element garden_pavilion_column_2 {
+        geometry: {"type":"cylinder","radius":0.35,"radiusTop":0.3,"height":4.4};
+        style: "ruin";
+        position: [-5,2.2,24];
+      }
+      element garden_pavilion_column_3 {
+        geometry: {"type":"cylinder","radius":0.35,"radiusTop":0.3,"height":4.4};
+        style: "ruin";
+        position: [5,2.2,24];
+      }
+      element garden_waymark {
+        geometry: {"type":"plane","size":[8,0.55]};
+        style: "letter";
+        position: [0,3.2,-13];
+        text: "SOUTH / THE STILLWATER GARDENS";
+        raycast: false;
+      }
+    }
+    component arrival_camp {
+      raycast: false;
+      element camp_hearth {
+        geometry: {"type":"cylinder","radius":0.65,"radiusTop":0.65,"height":0.18};
+        style: "rock";
+        position: [-6,0.09,27];
+      }
+      element camp_fire {
+        geometry: {"type":"sphere","radius":0.33};
+        style: "fire";
+        position: [-6,0.42,27];
+        scale: [1,1.55,1];
+      }
+      element camp_bench {
+        geometry: {"type":"box","size":[2.1,0.3,0.65]};
+        style: "wood";
+        position: [-7.8,0.42,28.8];
+        rotation: [0,-25,0];
+      }
+      element camp_shelter_back {
+        geometry: {"type":"box","size":[4,1.7,0.14]};
+        style: "canvas";
+        position: [-11,0.9,29];
+        rotation: [0,-12,0];
+      }
+      element camp_shelter_roof {
+        geometry: {"type":"box","size":[4.5,0.12,3.3]};
+        style: "canvas";
+        position: [-11,2.1,28];
+        rotation: [10,-12,0];
+      }
+      element world_title {
+        geometry: {"type":"plane","size":[6.8,1.1]};
+        style: "title";
+        position: [-6.2,4.1,13];
+        text: "ASTERFALL\nTHE OPEN MEADOW";
+        raycast: false;
+      }
+      element world_welcome {
+        geometry: {"type":"plane","size":[6.5,0.3]};
+        style: "letter";
+        position: [-6.2,3.25,13];
+        text: "Gather. Wander. Return with a story.";
+        raycast: false;
+      }
+    }
+    component starter_altar {
+      position: [0,0,24];
+      script: "scripts/interaction.script";
+      config: {"action":"equip","target":"starter_altar"};
+      element starter_altar_base {
+        geometry: {"type":"cylinder","radius":0.6,"radiusTop":0.52,"height":0.32};
+        style: "ruin";
+        position: [0,0.16,0];
+      }
+      element starter_altar_blade {
+        geometry: {"type":"box","size":[0.075,0.8,0.035]};
+        style: "steel";
+        position: [0,1.0,0];
+        rotation: [0,0,5];
+      }
+      element starter_altar_guard {
+        geometry: {"type":"box","size":[0.38,0.045,0.09]};
+        style: "gold";
+        position: [-0.03,0.62,0];
+      }
+      element starter_altar_grip {
+        geometry: {"type":"cylinder","radius":0.04,"radiusTop":0.04,"height":0.22};
+        style: "wood";
+        position: [-0.03,0.47,0];
+      }
+      element starter_altar_pommel {
+        geometry: {"type":"sphere","radius":0.065};
+        style: "steel";
+        position: [-0.03,0.34,0];
+      }
+      element starter_altar_label {
+        geometry: {"type":"plane","size":[1.45,0.26]};
+        style: "inscription";
+        position: [0,0.47,0.7];
+        text: "WAYFARER\nStarter Sword";
+        raycast: false;
+      }
+    }
+    component iron_altar {
+      position: [3,0,24];
+      script: "scripts/interaction.script";
+      config: {"action":"equip","target":"iron_altar"};
+      element iron_altar_base {
+        geometry: {"type":"cylinder","radius":0.6,"radiusTop":0.52,"height":0.32};
+        style: "ruin";
+        position: [0,0.16,0];
+      }
+      element iron_altar_blade {
+        geometry: {"type":"box","size":[0.075,0.8,0.035]};
+        style: "iron";
+        position: [0,1.0,0];
+        rotation: [0,0,5];
+      }
+      element iron_altar_guard {
+        geometry: {"type":"box","size":[0.38,0.045,0.09]};
+        style: "gold";
+        position: [-0.03,0.62,0];
+      }
+      element iron_altar_grip {
+        geometry: {"type":"cylinder","radius":0.04,"radiusTop":0.04,"height":0.22};
+        style: "wood";
+        position: [-0.03,0.47,0];
+      }
+      element iron_altar_pommel {
+        geometry: {"type":"sphere","radius":0.065};
+        style: "iron";
+        position: [-0.03,0.34,0];
+      }
+      element iron_altar_label {
+        geometry: {"type":"plane","size":[1.45,0.26]};
+        style: "inscription";
+        position: [0,0.47,0.7];
+        text: "IRON OATH\nFree to claim";
+        raycast: false;
+      }
+    }
+    component star_altar {
+      position: [-3,0,24];
+      script: "scripts/interaction.script";
+      config: {"action":"equip","target":"star_altar"};
+      element star_altar_base {
+        geometry: {"type":"cylinder","radius":0.6,"radiusTop":0.52,"height":0.32};
+        style: "ruin";
+        position: [0,0.16,0];
+      }
+      element star_altar_blade {
+        geometry: {"type":"box","size":[0.075,0.8,0.035]};
+        style: "star";
+        position: [0,1.0,0];
+        rotation: [0,0,5];
+      }
+      element star_altar_guard {
+        geometry: {"type":"box","size":[0.38,0.045,0.09]};
+        style: "gold";
+        position: [-0.03,0.62,0];
+      }
+      element star_altar_grip {
+        geometry: {"type":"cylinder","radius":0.04,"radiusTop":0.04,"height":0.22};
+        style: "wood";
+        position: [-0.03,0.47,0];
+      }
+      element star_altar_pommel {
+        geometry: {"type":"sphere","radius":0.065};
+        style: "star";
+        position: [-0.03,0.34,0];
+      }
+      element star_altar_label {
+        geometry: {"type":"plane","size":[1.45,0.26]};
+        style: "inscription";
+        position: [0,0.47,0.7];
+        text: "DAWNSONG\nQuest I / 100 G";
+        raycast: false;
+      }
+    }
+    component rest_shrine {
+      position: [0,0,30];
+      script: "scripts/interaction.script";
+      config: {"action":"rest","target":"rest_shrine"};
+      element rest_shrine_base {
+        geometry: {"type":"cylinder","radius":0.85,"radiusTop":0.75,"height":0.35};
+        style: "ruin";
+        position: [0,0.175,0];
+      }
+      element rest_shrine_heart {
+        geometry: {"type":"sphere","radius":0.3};
+        style: "healing";
+        position: [0,0.95,0];
+      }
+      element rest_shrine_label {
+        geometry: {"type":"plane","size":[1.8,0.25]};
+        style: "letter";
+        position: [0,1.35,0.3];
+        text: "REST / HEAL";
+        raycast: false;
+      }
+    }
+    component quest_stone {
+      position: [0,0,20];
+      script: "scripts/interaction.script";
+      config: {"action":"claim","target":"quest_stone"};
+      element quest_stone_base {
+        geometry: {"type":"cylinder","radius":1.05,"radiusTop":0.9,"height":0.35};
+        style: "ruin";
+        position: [0,0.175,0];
+      }
+      element quest_stone_tablet {
+        geometry: {"type":"box","size":[1.15,1.65,0.4]};
+        style: "ruin";
+        position: [0,1.05,0];
+        rotation: [0,0,-4];
+      }
+      element quest_stone_rune {
+        geometry: {"type":"box","size":[0.065,0.95,0.04]};
+        style: "rune";
+        position: [0,1.1,0.23];
+      }
+      element quest_stone_label {
+        geometry: {"type":"plane","size":[1.8,0.55]};
+        style: "inscription";
+        position: [0,1.15,0.25];
+        text: "MEADOW CALLS\nDefeat five creatures.\nThen face the Warden.";
+        raycast: false;
+      }
+    }
+    component slime_0 {
+      name: "Meadow Wisp";
+      position: [-24,0,8];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":0,"target":"slime_0","kind":"slime","x":-24,"z":8,"phase":0.0,"bodyHeight":0.65,"color":"#8BC7A8"};
+      component slime_0_body {
+        position: [0,0.65,0];
+        element slime_0_skin {
+          geometry: {"type":"sphere","radius":0.68};
+          style: "slime";
+          position: [0,0,0];
+          scale: [1.1,0.85,1];
+        }
+        element slime_0_eye_left {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [-0.23,0.1,0.58];
+        }
+        element slime_0_eye_right {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [0.23,0.1,0.58];
+        }
+        element slime_0_heart {
+          geometry: {"type":"sphere","radius":0.12};
+          style: "healing";
+          position: [0,0.28,0.53];
+        }
+      }
+      component slime_0_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element slime_0_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element slime_0_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component slime_1 {
+      name: "Meadow Wisp";
+      position: [-58,0,-12];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":1,"target":"slime_1","kind":"slime","x":-58,"z":-12,"phase":0.83,"bodyHeight":0.65,"color":"#8BC7A8"};
+      component slime_1_body {
+        position: [0,0.65,0];
+        element slime_1_skin {
+          geometry: {"type":"sphere","radius":0.68};
+          style: "slime";
+          position: [0,0,0];
+          scale: [1.1,0.85,1];
+        }
+        element slime_1_eye_left {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [-0.23,0.1,0.58];
+        }
+        element slime_1_eye_right {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [0.23,0.1,0.58];
+        }
+        element slime_1_heart {
+          geometry: {"type":"sphere","radius":0.12};
+          style: "healing";
+          position: [0,0.28,0.53];
+        }
+      }
+      component slime_1_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element slime_1_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element slime_1_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component slime_2 {
+      name: "Meadow Wisp";
+      position: [28,0,0];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":2,"target":"slime_2","kind":"slime","x":28,"z":0,"phase":1.66,"bodyHeight":0.65,"color":"#8BC7A8"};
+      component slime_2_body {
+        position: [0,0.65,0];
+        element slime_2_skin {
+          geometry: {"type":"sphere","radius":0.68};
+          style: "slime";
+          position: [0,0,0];
+          scale: [1.1,0.85,1];
+        }
+        element slime_2_eye_left {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [-0.23,0.1,0.58];
+        }
+        element slime_2_eye_right {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [0.23,0.1,0.58];
+        }
+        element slime_2_heart {
+          geometry: {"type":"sphere","radius":0.12};
+          style: "healing";
+          position: [0,0.28,0.53];
+        }
+      }
+      component slime_2_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element slime_2_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element slime_2_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component slime_3 {
+      name: "Meadow Wisp";
+      position: [58,0,-38];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":3,"target":"slime_3","kind":"slime","x":58,"z":-38,"phase":2.4899999999999998,"bodyHeight":0.65,"color":"#8BC7A8"};
+      component slime_3_body {
+        position: [0,0.65,0];
+        element slime_3_skin {
+          geometry: {"type":"sphere","radius":0.68};
+          style: "slime";
+          position: [0,0,0];
+          scale: [1.1,0.85,1];
+        }
+        element slime_3_eye_left {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [-0.23,0.1,0.58];
+        }
+        element slime_3_eye_right {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [0.23,0.1,0.58];
+        }
+        element slime_3_heart {
+          geometry: {"type":"sphere","radius":0.12};
+          style: "healing";
+          position: [0,0.28,0.53];
+        }
+      }
+      component slime_3_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element slime_3_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element slime_3_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component wolf_0 {
+      name: "Bramble Wolf";
+      position: [-72,0,-50];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":4,"target":"wolf_0","kind":"wolf","x":-72,"z":-50,"phase":3.32,"bodyHeight":0.85,"color":"#A4A9AF"};
+      component wolf_0_body {
+        position: [0,0.85,0];
+        element wolf_0_skin {
+          geometry: {"type":"sphere","radius":0.62};
+          style: "wolf";
+          position: [0,0,0];
+          scale: [0.75,0.85,1.7];
+        }
+        element wolf_0_muzzle {
+          geometry: {"type":"sphere","radius":0.35};
+          style: "wolf";
+          position: [0,0.32,0.91];
+          scale: [0.82,0.86,1.2];
+        }
+        element wolf_0_wolf_eye_left {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [-0.13,0.46,1.19];
+        }
+        element wolf_0_wolf_eye_right {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [0.13,0.46,1.19];
+        }
+        element wolf_0_ear_l {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [-0.24,0.72,0.86];
+          rotation: [0,0,12];
+        }
+        element wolf_0_ear_r {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [0.24,0.72,0.86];
+          rotation: [0,0,-12];
+        }
+      }
+      component wolf_0_front {
+        position: [0,0.6,0.65];
+        element wolf_0_front_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_0_front_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_0_back {
+        position: [0,0.6,-0.65];
+        element wolf_0_back_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_0_back_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_0_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element wolf_0_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element wolf_0_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component wolf_1 {
+      name: "Bramble Wolf";
+      position: [72,0,-68];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":5,"target":"wolf_1","kind":"wolf","x":72,"z":-68,"phase":4.1499999999999995,"bodyHeight":0.85,"color":"#A4A9AF"};
+      component wolf_1_body {
+        position: [0,0.85,0];
+        element wolf_1_skin {
+          geometry: {"type":"sphere","radius":0.62};
+          style: "wolf";
+          position: [0,0,0];
+          scale: [0.75,0.85,1.7];
+        }
+        element wolf_1_muzzle {
+          geometry: {"type":"sphere","radius":0.35};
+          style: "wolf";
+          position: [0,0.32,0.91];
+          scale: [0.82,0.86,1.2];
+        }
+        element wolf_1_wolf_eye_left {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [-0.13,0.46,1.19];
+        }
+        element wolf_1_wolf_eye_right {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [0.13,0.46,1.19];
+        }
+        element wolf_1_ear_l {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [-0.24,0.72,0.86];
+          rotation: [0,0,12];
+        }
+        element wolf_1_ear_r {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [0.24,0.72,0.86];
+          rotation: [0,0,-12];
+        }
+      }
+      component wolf_1_front {
+        position: [0,0.6,0.65];
+        element wolf_1_front_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_1_front_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_1_back {
+        position: [0,0.6,-0.65];
+        element wolf_1_back_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_1_back_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_1_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element wolf_1_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element wolf_1_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component golem_0 {
+      name: "Mossbound";
+      position: [32,0,-90];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":6,"target":"golem_0","kind":"golem","x":32,"z":-90,"phase":4.9799999999999995,"bodyHeight":1.2,"color":"#A0B1A4"};
+      component golem_0_body {
+        position: [0,1.2,0];
+        element golem_0_skin {
+          geometry: {"type":"box","size":[1.05,1.3,0.7]};
+          style: "golem";
+          position: [0,0,0];
+        }
+        element golem_0_head {
+          geometry: {"type":"box","size":[0.65,0.55,0.6]};
+          style: "ruin";
+          position: [0,0.98,0];
+        }
+        element golem_0_gaze {
+          geometry: {"type":"box","size":[0.45,0.06,0.04]};
+          style: "rune";
+          position: [0,1.04,0.32];
+        }
+        component golem_0_left {
+          position: [-0.83,0.38,0];
+          element golem_0_left_fist {
+            geometry: {"type":"box","size":[0.43,1.1,0.5]};
+            style: "golem";
+            position: [0,-0.42,0];
+          }
+        }
+        component golem_0_right {
+          position: [0.83,0.38,0];
+          element golem_0_right_fist {
+            geometry: {"type":"box","size":[0.43,1.1,0.5]};
+            style: "golem";
+            position: [0,-0.42,0];
+          }
+        }
+      }
+      element golem_0_leg_left {
+        geometry: {"type":"box","size":[0.44,0.85,0.57]};
+        style: "ruin";
+        position: [-0.34,0.425,0];
+      }
+      element golem_0_leg_right {
+        geometry: {"type":"box","size":[0.44,0.85,0.57]};
+        style: "ruin";
+        position: [0.34,0.425,0];
+      }
+      component golem_0_health {
+        position: [0,3.2,0];
+        raycast: false;
+        element golem_0_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element golem_0_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+        element golem_0_name {
+          geometry: {"type":"plane","size":[2.5,0.25]};
+          style: "letter";
+          position: [0,0.23,0];
+          text: "Mossbound";
+          raycast: false;
+        }
+      }
+    }
+    component warden_0 {
+      name: "The First Warden";
+      position: [0,0,-112];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":7,"target":"warden_0","kind":"warden","x":0,"z":-112,"phase":5.81,"bodyHeight":1.65,"color":"#D6B888"};
+      component warden_0_body {
+        position: [0,1.65,0];
+        element warden_0_skin {
+          geometry: {"type":"box","size":[1.4489999999999998,1.7939999999999998,0.9659999999999999]};
+          style: "warden";
+          position: [0,0,0];
+        }
+        element warden_0_head {
+          geometry: {"type":"box","size":[0.8969999999999999,0.759,0.828]};
+          style: "ruin";
+          position: [0,1.3523999999999998,0];
+        }
+        element warden_0_gaze {
+          geometry: {"type":"box","size":[0.621,0.08279999999999998,0.04]};
+          style: "rune";
+          position: [0,1.4352,0.4416];
+        }
+        component warden_0_left {
+          position: [-1.1453999999999998,0.5244,0];
+          element warden_0_left_fist {
+            geometry: {"type":"box","size":[0.5933999999999999,1.518,0.69]};
+            style: "warden";
+            position: [0,-0.5795999999999999,0];
+          }
+        }
+        component warden_0_right {
+          position: [1.1453999999999998,0.5244,0];
+          element warden_0_right_fist {
+            geometry: {"type":"box","size":[0.5933999999999999,1.518,0.69]};
+            style: "warden";
+            position: [0,-0.5795999999999999,0];
+          }
+        }
+      }
+      element warden_0_leg_left {
+        geometry: {"type":"box","size":[0.6072,1.1729999999999998,0.7865999999999999]};
+        style: "ruin";
+        position: [-0.4692,0.5864999999999999,0];
+      }
+      element warden_0_leg_right {
+        geometry: {"type":"box","size":[0.6072,1.1729999999999998,0.7865999999999999]};
+        style: "ruin";
+        position: [0.4692,0.5864999999999999,0];
+      }
+      component warden_0_health {
+        position: [0,4.3,0];
+        raycast: false;
+        element warden_0_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element warden_0_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+        element warden_0_name {
+          geometry: {"type":"plane","size":[2.5,0.25]};
+          style: "letter";
+          position: [0,0.23,0];
+          text: "The First Warden";
+          raycast: false;
+        }
+      }
+    }
+    component slime_4 {
+      name: "Meadow Wisp";
+      position: [45,0,65];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":8,"target":"slime_4","kind":"slime","x":45,"z":65,"phase":6.64,"bodyHeight":0.65,"color":"#8BC7A8"};
+      component slime_4_body {
+        position: [0,0.65,0];
+        element slime_4_skin {
+          geometry: {"type":"sphere","radius":0.68};
+          style: "slime";
+          position: [0,0,0];
+          scale: [1.1,0.85,1];
+        }
+        element slime_4_eye_left {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [-0.23,0.1,0.58];
+        }
+        element slime_4_eye_right {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [0.23,0.1,0.58];
+        }
+        element slime_4_heart {
+          geometry: {"type":"sphere","radius":0.12};
+          style: "healing";
+          position: [0,0.28,0.53];
+        }
+      }
+      component slime_4_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element slime_4_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element slime_4_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component slime_5 {
+      name: "Meadow Wisp";
+      position: [-80,0,62];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":9,"target":"slime_5","kind":"slime","x":-80,"z":62,"phase":7.47,"bodyHeight":0.65,"color":"#8BC7A8"};
+      component slime_5_body {
+        position: [0,0.65,0];
+        element slime_5_skin {
+          geometry: {"type":"sphere","radius":0.68};
+          style: "slime";
+          position: [0,0,0];
+          scale: [1.1,0.85,1];
+        }
+        element slime_5_eye_left {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [-0.23,0.1,0.58];
+        }
+        element slime_5_eye_right {
+          geometry: {"type":"sphere","radius":0.065};
+          style: "eye";
+          position: [0.23,0.1,0.58];
+        }
+        element slime_5_heart {
+          geometry: {"type":"sphere","radius":0.12};
+          style: "healing";
+          position: [0,0.28,0.53];
+        }
+      }
+      component slime_5_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element slime_5_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element slime_5_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component wolf_2 {
+      name: "Bramble Wolf";
+      position: [-35,0,-100];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":10,"target":"wolf_2","kind":"wolf","x":-35,"z":-100,"phase":8.299999999999999,"bodyHeight":0.85,"color":"#A4A9AF"};
+      component wolf_2_body {
+        position: [0,0.85,0];
+        element wolf_2_skin {
+          geometry: {"type":"sphere","radius":0.62};
+          style: "wolf";
+          position: [0,0,0];
+          scale: [0.75,0.85,1.7];
+        }
+        element wolf_2_muzzle {
+          geometry: {"type":"sphere","radius":0.35};
+          style: "wolf";
+          position: [0,0.32,0.91];
+          scale: [0.82,0.86,1.2];
+        }
+        element wolf_2_wolf_eye_left {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [-0.13,0.46,1.19];
+        }
+        element wolf_2_wolf_eye_right {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [0.13,0.46,1.19];
+        }
+        element wolf_2_ear_l {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [-0.24,0.72,0.86];
+          rotation: [0,0,12];
+        }
+        element wolf_2_ear_r {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [0.24,0.72,0.86];
+          rotation: [0,0,-12];
+        }
+      }
+      component wolf_2_front {
+        position: [0,0.6,0.65];
+        element wolf_2_front_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_2_front_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_2_back {
+        position: [0,0.6,-0.65];
+        element wolf_2_back_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_2_back_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_2_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element wolf_2_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element wolf_2_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component wolf_3 {
+      name: "Bramble Wolf";
+      position: [85,0,10];
+      visible: false;
+      script: "scripts/monster.script";
+      config: {"index":11,"target":"wolf_3","kind":"wolf","x":85,"z":10,"phase":9.129999999999999,"bodyHeight":0.85,"color":"#A4A9AF"};
+      component wolf_3_body {
+        position: [0,0.85,0];
+        element wolf_3_skin {
+          geometry: {"type":"sphere","radius":0.62};
+          style: "wolf";
+          position: [0,0,0];
+          scale: [0.75,0.85,1.7];
+        }
+        element wolf_3_muzzle {
+          geometry: {"type":"sphere","radius":0.35};
+          style: "wolf";
+          position: [0,0.32,0.91];
+          scale: [0.82,0.86,1.2];
+        }
+        element wolf_3_wolf_eye_left {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [-0.13,0.46,1.19];
+        }
+        element wolf_3_wolf_eye_right {
+          geometry: {"type":"sphere","radius":0.045};
+          style: "eye";
+          position: [0.13,0.46,1.19];
+        }
+        element wolf_3_ear_l {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [-0.24,0.72,0.86];
+          rotation: [0,0,12];
+        }
+        element wolf_3_ear_r {
+          geometry: {"type":"cylinder","radius":0.15,"radiusTop":0,"height":0.4};
+          style: "wolf";
+          position: [0.24,0.72,0.86];
+          rotation: [0,0,-12];
+        }
+      }
+      component wolf_3_front {
+        position: [0,0.6,0.65];
+        element wolf_3_front_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_3_front_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_3_back {
+        position: [0,0.6,-0.65];
+        element wolf_3_back_l {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [-0.4,-0.22,0];
+        }
+        element wolf_3_back_r {
+          geometry: {"type":"box","size":[0.18,0.65,0.22]};
+          style: "wolf";
+          position: [0.4,-0.22,0];
+        }
+      }
+      component wolf_3_health {
+        position: [0,2.3,0];
+        raycast: false;
+        element wolf_3_hp_bg {
+          geometry: {"type":"box","size":[1.12,0.065,0.035]};
+          style: "hp_back";
+          position: [0,0,0];
+        }
+        element wolf_3_hp {
+          geometry: {"type":"box","size":[1.04,0.045,0.045]};
+          style: "hp";
+          position: [0,0,0.025];
+        }
+      }
+    }
+    component herb_0 {
+      name: "달빛잎";
+      position: [8,0,29];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":0,"target":"herb_0","kind":"moonleaf"};
+      element herb_0_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_0_bloom {
+        geometry: {"type":"sphere","radius":0.36};
+        style: "moonleaf";
+        position: [0,0.57,0];
+        scale: [1.3,0.48,1.5];
+        rotation: [0,0,18];
+      }
+    }
+    component herb_1 {
+      name: "햇살꽃";
+      position: [-9,0,31];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":1,"target":"herb_1","kind":"sunbloom"};
+      element herb_1_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_1_bloom {
+        geometry: {"type":"sphere","radius":0.34};
+        style: "sunbloom";
+        position: [0,0.77,0];
+        scale: [1,0.65,1];
+      }
+    }
+    component herb_2 {
+      name: "산딸기";
+      position: [-18,0,7];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":2,"target":"herb_2","kind":"wildberry"};
+      element herb_2_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_2_bloom {
+        geometry: {"type":"sphere","radius":0.4};
+        style: "wildberry";
+        position: [0,0.5,0];
+        scale: [1.3,0.85,1.1];
+      }
+    }
+    component herb_3 {
+      name: "달빛잎";
+      position: [-42,0,-10];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":3,"target":"herb_3","kind":"moonleaf"};
+      element herb_3_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_3_bloom {
+        geometry: {"type":"sphere","radius":0.36};
+        style: "moonleaf";
+        position: [0,0.57,0];
+        scale: [1.3,0.48,1.5];
+        rotation: [0,111,18];
+      }
+    }
+    component herb_4 {
+      name: "산딸기";
+      position: [-63,0,-28];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":4,"target":"herb_4","kind":"wildberry"};
+      element herb_4_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_4_bloom {
+        geometry: {"type":"sphere","radius":0.4};
+        style: "wildberry";
+        position: [0,0.5,0];
+        scale: [1.3,0.85,1.1];
+      }
+    }
+    component herb_5 {
+      name: "햇살꽃";
+      position: [-90,0,-45];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":5,"target":"herb_5","kind":"sunbloom"};
+      element herb_5_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_5_bloom {
+        geometry: {"type":"sphere","radius":0.34};
+        style: "sunbloom";
+        position: [0,0.77,0];
+        scale: [1,0.65,1];
+      }
+    }
+    component herb_6 {
+      name: "달빛잎";
+      position: [-25,0,-72];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":6,"target":"herb_6","kind":"moonleaf"};
+      element herb_6_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_6_bloom {
+        geometry: {"type":"sphere","radius":0.36};
+        style: "moonleaf";
+        position: [0,0.57,0];
+        scale: [1.3,0.48,1.5];
+        rotation: [0,222,18];
+      }
+    }
+    component herb_7 {
+      name: "햇살꽃";
+      position: [18,0,-88];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":7,"target":"herb_7","kind":"sunbloom"};
+      element herb_7_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_7_bloom {
+        geometry: {"type":"sphere","radius":0.34};
+        style: "sunbloom";
+        position: [0,0.77,0];
+        scale: [1,0.65,1];
+      }
+    }
+    component herb_8 {
+      name: "산딸기";
+      position: [52,0,-48];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":8,"target":"herb_8","kind":"wildberry"};
+      element herb_8_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_8_bloom {
+        geometry: {"type":"sphere","radius":0.4};
+        style: "wildberry";
+        position: [0,0.5,0];
+        scale: [1.3,0.85,1.1];
+      }
+    }
+    component herb_9 {
+      name: "달빛잎";
+      position: [78,0,-82];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":9,"target":"herb_9","kind":"moonleaf"};
+      element herb_9_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_9_bloom {
+        geometry: {"type":"sphere","radius":0.36};
+        style: "moonleaf";
+        position: [0,0.57,0];
+        scale: [1.3,0.48,1.5];
+        rotation: [0,333,18];
+      }
+    }
+    component herb_10 {
+      name: "햇살꽃";
+      position: [89,0,3];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":10,"target":"herb_10","kind":"sunbloom"};
+      element herb_10_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_10_bloom {
+        geometry: {"type":"sphere","radius":0.34};
+        style: "sunbloom";
+        position: [0,0.77,0];
+        scale: [1,0.65,1];
+      }
+    }
+    component herb_11 {
+      name: "산딸기";
+      position: [50,0,40];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":11,"target":"herb_11","kind":"wildberry"};
+      element herb_11_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_11_bloom {
+        geometry: {"type":"sphere","radius":0.4};
+        style: "wildberry";
+        position: [0,0.5,0];
+        scale: [1.3,0.85,1.1];
+      }
+    }
+    component herb_12 {
+      name: "햇살꽃";
+      position: [20,0,72];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":12,"target":"herb_12","kind":"sunbloom"};
+      element herb_12_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_12_bloom {
+        geometry: {"type":"sphere","radius":0.34};
+        style: "sunbloom";
+        position: [0,0.77,0];
+        scale: [1,0.65,1];
+      }
+    }
+    component herb_13 {
+      name: "산딸기";
+      position: [-28,0,85];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":13,"target":"herb_13","kind":"wildberry"};
+      element herb_13_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_13_bloom {
+        geometry: {"type":"sphere","radius":0.4};
+        style: "wildberry";
+        position: [0,0.5,0];
+        scale: [1.3,0.85,1.1];
+      }
+    }
+    component herb_14 {
+      name: "달빛잎";
+      position: [-72,0,65];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":14,"target":"herb_14","kind":"moonleaf"};
+      element herb_14_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_14_bloom {
+        geometry: {"type":"sphere","radius":0.36};
+        style: "moonleaf";
+        position: [0,0.57,0];
+        scale: [1.3,0.48,1.5];
+        rotation: [0,518,18];
+      }
+    }
+    component herb_15 {
+      name: "햇살꽃";
+      position: [-88,0,18];
+      visible: false;
+      script: "scripts/gather.script";
+      config: {"index":15,"target":"herb_15","kind":"sunbloom"};
+      element herb_15_stem {
+        geometry: {"type":"cylinder","radius":0.055,"radiusTop":0.035,"height":0.6};
+        style: "plant_stem";
+        position: [0,0.3,0];
+      }
+      element herb_15_bloom {
+        geometry: {"type":"sphere","radius":0.34};
+        style: "sunbloom";
+        position: [0,0.77,0];
+        scale: [1,0.65,1];
+      }
+    }
+    component party_0 {
+      name: "Explorer slot 1";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":0};
+      component party_0_body {
+        element party_0_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_0_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_0_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_0_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_0_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_0_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_0_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_0_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_0_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_0_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_1 {
+      name: "Explorer slot 2";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":1};
+      component party_1_body {
+        element party_1_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_1_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_1_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_1_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_1_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_1_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_1_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_1_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_1_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_1_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_2 {
+      name: "Explorer slot 3";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":2};
+      component party_2_body {
+        element party_2_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_2_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_2_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_2_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_2_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_2_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_2_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_2_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_2_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_2_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_3 {
+      name: "Explorer slot 4";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":3};
+      component party_3_body {
+        element party_3_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_3_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_3_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_3_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_3_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_3_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_3_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_3_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_3_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_3_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_4 {
+      name: "Explorer slot 5";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":4};
+      component party_4_body {
+        element party_4_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_4_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_4_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_4_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_4_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_4_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_4_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_4_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_4_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_4_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_5 {
+      name: "Explorer slot 6";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":5};
+      component party_5_body {
+        element party_5_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_5_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_5_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_5_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_5_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_5_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_5_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_5_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_5_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_5_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_6 {
+      name: "Explorer slot 7";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":6};
+      component party_6_body {
+        element party_6_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_6_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_6_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_6_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_6_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_6_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_6_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_6_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_6_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_6_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component party_7 {
+      name: "Explorer slot 8";
+      visible: false;
+      script: "scripts/player.script";
+      config: {"slot":7};
+      component party_7_body {
+        element party_7_torso {
+          geometry: {"type":"box","size":[0.57,0.65,0.31]};
+          style: "traveler";
+          position: [0,1.08,0];
+        }
+        element party_7_head {
+          geometry: {"type":"sphere","radius":0.23};
+          style: "skin";
+          position: [0,1.68,0];
+        }
+        element party_7_arm_left {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [-0.4,1.1,0];
+        }
+        element party_7_arm_right {
+          geometry: {"type":"box","size":[0.18,0.68,0.2]};
+          style: "traveler";
+          position: [0.4,1.1,0];
+        }
+        element party_7_leg_left {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [-0.17,0.39,0];
+        }
+        element party_7_leg_right {
+          geometry: {"type":"box","size":[0.21,0.72,0.24]};
+          style: "boots";
+          position: [0.17,0.39,0];
+        }
+        element party_7_blade {
+          geometry: {"type":"box","size":[0.06,0.04,0.95]};
+          style: "steel";
+          position: [0.45,0.85,0.47];
+          rotation: [0,0,-8];
+        }
+      }
+      element party_7_hp_bg {
+        geometry: {"type":"box","size":[0.9,0.055,0.03]};
+        style: "hp_back";
+        position: [0,2.17,0];
+        raycast: false;
+      }
+      element party_7_hp {
+        geometry: {"type":"box","size":[0.84,0.04,0.04]};
+        style: "hp";
+        position: [0,2.17,0.015];
+        raycast: false;
+      }
+      element party_7_name {
+        geometry: {"type":"plane","size":[1.9,0.2]};
+        style: "letter";
+        position: [0,2.43,0];
+        text: "Explorer";
+        raycast: false;
+      }
+    }
+    component weapon_control {
+      visible: false;
+      raycast: false;
+      scale: [0.7,0.7,0.7];
+      state: {"swing":0};
+      script: "scripts/weapon.script";
+      element held_blade {
+        geometry: {"type":"box","size":[0.075,0.035,1.05]};
+        style: "steel";
+        position: [0,0,-0.62];
+      }
+      element held_blade_edge {
+        geometry: {"type":"box","size":[0.015,0.045,0.96]};
+        style: "blade_edge";
+        position: [0.028,0,-0.61];
+      }
+      element held_guard {
+        geometry: {"type":"box","size":[0.24,0.025,0.065]};
+        style: "gold";
+        position: [0,0,-0.075];
+      }
+      element held_grip {
+        geometry: {"type":"cylinder","radius":0.028,"radiusTop":0.028,"height":0.2};
+        style: "wood";
+        position: [0,0,0.07];
+        rotation: [90,0,0];
+      }
+      element held_pommel {
+        geometry: {"type":"sphere","radius":0.045};
+        style: "gold";
+        position: [0,0,0.2];
+      }
+    }
+    component journey_hud {
+      raycast: false;
+      state: {"statusOpen":false};
+      script: "scripts/hud.script";
+      element journey_plate {
+        geometry: {"type":"plane","size":[1.92,0.35]};
+        style: "hud_back";
+        position: [0,-0.015,0];
+      }
+      element journey_status {
+        geometry: {"type":"plane","size":[1.78,0.1]};
+        style: "hud";
+        position: [0,0.085,0.012];
+        text: "ASTERFALL · 서버에 연결하는 중";
+        raycast: false;
+      }
+      element journey_notice {
+        geometry: {"type":"plane","size":[1.78,0.18]};
+        style: "hud";
+        position: [0,-0.065,0.012];
+        text: "풍경을 둘러보며 잠시 기다려주세요.";
+        raycast: false;
+      }
+    }
+    component status_panel {
+      visible: false;
+      raycast: false;
+      element status_panel_back {
+        geometry: {"type":"plane","size":[1.92,1.62]};
+        style: "status_back";
+        position: [0,0,0];
+      }
+      element status_panel_rule {
+        geometry: {"type":"box","size":[1.72,0.009,0.008]};
+        style: "status_accent";
+        position: [0,0.455,0.014];
+      }
+      element status_heading {
+        geometry: {"type":"plane","size":[1.72,0.13]};
+        style: "status_title";
+        position: [0,0.66,0.018];
+        text: "STATUS / INVENTORY";
+        raycast: false;
+      }
+      element status_identity {
+        geometry: {"type":"plane","size":[1.72,0.12]};
+        style: "hud";
+        position: [0,0.51,0.018];
+        text: "서버에 연결하는 중";
+        raycast: false;
+      }
+      element status_vitals {
+        geometry: {"type":"plane","size":[1.72,0.16]};
+        style: "hud";
+        position: [0,0.3,0.018];
+        text: "HP — / —\nXP —";
+        raycast: false;
+      }
+      element status_equipment {
+        geometry: {"type":"plane","size":[1.72,0.11]};
+        style: "hud";
+        position: [0,0.12,0.018];
+        text: "무기 —   ·   골드 —";
+        raycast: false;
+      }
+      element status_quest {
+        geometry: {"type":"plane","size":[1.72,0.15]};
+        style: "hud";
+        position: [0,-0.05,0.018];
+        text: "처치 —\n여정을 준비하고 있습니다";
+        raycast: false;
+      }
+      element status_inventory {
+        geometry: {"type":"plane","size":[1.72,0.36]};
+        style: "hud";
+        position: [0,-0.36,0.018];
+        text: "INVENTORY\n가방이 비어 있습니다";
+        raycast: false;
+      }
+      element status_help {
+        geometry: {"type":"plane","size":[1.72,0.07]};
+        style: "status_hint";
+        position: [0,-0.695,0.018];
+        text: "TAB / LEFT Y · CLOSE";
+        raycast: false;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "quarry_01",
+  "url": "https://polyhaven.com/a/quarry_01",
+  "authors": {
+    "Sergej Majboroda": "All"
+  },
+  "license": "CC0-1.0",
+  "license_url": "https://polyhaven.com/license",
+  "files": [
+    {
+      "map": "HDR environment",
+      "path": "lighting/quarry_01_1k.hdr",
+      "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/quarry_01_1k.hdr",
+      "bytes": 1477951,
+      "md5": "d4c4954484c7a713e283b22f71591f26",
+      "sha256": "a3101f0ae89ed847dbed88da3ffa3ddb17b5acf8063099b26ceae08f640eea9b"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+// Gathering is a server-owned claim, never a client inventory write.
+on onUpdate(ctx,deltaSeconds) {
+  let snapshot = ctx.getSharedState();
+  if (snapshot == null) { ctx.setTransform({visible:false}); }
+  else {
+    let plant = snapshot.resources[ctx.config.index];
+    ctx.setTransform({visible:plant.active,position:plant.position});
+  }
+}
+on onInteract(ctx,event) {
+  let snapshot = ctx.getSharedState();
+  if (snapshot != null) { ctx.sendAction("gather",{target:ctx.config.target}); }
+}
